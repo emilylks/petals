@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from '../navigation/AuthProvider';
 
 function PatientHomeScreen({ navigation }) {

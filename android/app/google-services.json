@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "739198909270",
+    "firebase_url": "https://petals-f2bbf.firebaseio.com",
+    "project_id": "petals-f2bbf",
+    "storage_bucket": "petals-f2bbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739198909270:android:ff53b41a94fff7a256b4f7",
+        "android_client_info": {
+          "package_name": "com.petals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739198909270-3cnosc625ad8fp8eu8jmeqc7as4q7q3n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvK2idCeoM7biB3JKJzdfbleCrR0rEAF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739198909270-3cnosc625ad8fp8eu8jmeqc7as4q7q3n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "739198909270-g5gamemkq5e141lj9v0pn3rsq3jburiv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.petals"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
