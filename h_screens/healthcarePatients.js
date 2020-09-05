@@ -66,7 +66,7 @@ function healthcarePatients({ navigation }) {
                                   });}}
         />
       </TouchableOpacity>
-    </View>
+      </View>
   );
 }
 
@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
     marginBottom: 75,
   },
   container: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 20,
   },
   headerText: {
@@ -92,9 +92,8 @@ const styles = StyleSheet.create({
   promptText: {
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'left',
-    alignSelf: 'stretch',
     paddingBottom: 5,
   },
   img: {
@@ -109,15 +108,14 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#E5E5E5',
-        borderRadius: 1,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: '#CDCDC6',
         width: 350,
-        height: 35,
+        height: 40,
         textAlign: 'center',
         fontStyle: 'italic',
         fontSize: 14,
-        // letterSpacing: 4,
   },
   addBut: {
     marginTop: 10,
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-end',
-    backgroundColor: '#4E96AD',
+    backgroundColor: '#74C9E4',
     borderRadius: 50,
     width: 60,
     height: 60,

@@ -3,13 +3,24 @@ import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from '../navigation/AuthProvider';
+import Icon from 'react-native-vector-icons/Octicons';
+
 
 function PatientHomeScreen({ navigation }) {
   const { logout } = useContext(AuthContext);
 
   return (
+
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
-        <View style={{height: 30}} />
+      <Icon.Button
+        name="three-bars"
+        color="#000"
+        backgroundColor = "#fff"
+        size = {30}
+        style={{marginTop: 50, marginRight: 320}} 
+        onPress={() => navigation.openDrawer()}>
+      </Icon.Button>
+     
         <TouchableOpacity style={{height: 50, width: 80, backgroundColor: '#4C6663',
                                   alignItems: 'center'}}
                           onPress={() => logout()}>
@@ -40,7 +51,7 @@ function PatientHomeScreen({ navigation }) {
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
               Task Name</Text>
         </TouchableOpacity>
-
+      
 
     </View>
   );
