@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Octicons';
 
 function PatientHomeScreen({ navigation }) {
   const { logout } = useContext(AuthContext);
+
   return (
 
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
@@ -41,12 +42,12 @@ function PatientHomeScreen({ navigation }) {
       <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
 
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Task')}>
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
                  O Task Name</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Task')}>
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
               Task Name</Text>
         </TouchableOpacity>

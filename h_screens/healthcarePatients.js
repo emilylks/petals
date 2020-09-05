@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
@@ -13,41 +14,73 @@ function healthcarePatients() {
         <Text style={styles.promptText}> 
           Name
         </Text>
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.promptText}>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
         </View>
+    
+        <View style={{
+           borderBottomColor: 'black',
+           borderBottomWidth: 1,
+           width: 400,
+           marginTop: -20,
+           marginBottom: 40
+           }}>
+             </View>
+
+        <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+          BILLY JIM
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.input}>
+        <Text style={styles.promptText}>
+        </Text>
+        </View>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.addBut}>
         <Text style={{fontSize: 30, textAlign: 'center', color: 'white'}}>
           +
         </Text>
       </TouchableOpacity>
-    </View>
+      </View>
   );
 }
 
@@ -61,20 +94,21 @@ const styles = StyleSheet.create({
     marginBottom: 75,
   },
   container: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 20,
   },
   headerText: {
     color: 'white',
-    fontSize: 30,
+    fontSize: 20,
+    textAlign: 'left',
+    fontWeight: 'bold',
   },
   promptText: {
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'left',
-    alignSelf: 'stretch',
     paddingBottom: 5,
   },
   img: { 
@@ -89,22 +123,21 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#E5E5E5',
-        borderRadius: 1,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: '#CDCDC6',
         width: 350,
-        height: 35,
+        height: 40,
         textAlign: 'center',
         fontStyle: 'italic',
         fontSize: 14,
-        // letterSpacing: 4,
   },
   addBut: {
     marginTop: 10,
     marginRight: 35,
     justifyContent: 'center',
     alignSelf: 'flex-end',
-    backgroundColor: '#4E96AD',
+    backgroundColor: '#74C9E4',
     borderRadius: 50,
     borderWidth: 1,
     borderColor: '#CDCDC6',
@@ -116,6 +149,14 @@ const styles = StyleSheet.create({
 
 
 export default healthcarePatients;
+
+
+
+
+
+
+
+
 
 
 
