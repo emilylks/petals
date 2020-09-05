@@ -32,7 +32,7 @@ function patientSettings() {
       <View style={{justifyContent: 'center', alignItems: 'center', width: 350, marginBottom: 20, marginTop: 20}}>
         <Text style={{fontSize: 12, color: 'black', fontStyle: 'italic', textAlign: 'center'}}>
           Note: if you have changed healthcare providers, please sign out and
-          log in with the updated provider ID. This is for enhanced security purposes.
+          log in with the updated provider ID. This is for enhanced security.
         </Text>
       </View>
     </View>
