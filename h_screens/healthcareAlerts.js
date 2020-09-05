@@ -36,43 +36,31 @@ function alerts() {
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-        </Text>
         </View>
       </TouchableOpacity>
       </View>
@@ -135,11 +123,6 @@ const styles = StyleSheet.create({
 
 
 export default alerts;
-
-
-
-
-
 
 
 
