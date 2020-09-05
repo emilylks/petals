@@ -1,27 +1,22 @@
-/* Patient Home Screen */
+/*landing screen */
 
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList, ScrollView} from 'react-native';
 
 
-function PatientHome() {
+function LandingScreen() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
 
-      
-      <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 100, fontSize: 28, color: '#000'}}>
-        Welcome back,</Text>
-      
-      <Text style={{fontFamily: 'Inter-SemiBold', marginTop: -10, fontSize: 28, color: '#4E96AD'}}>
-        Patient Name</Text> 
+      <View style={styles.rectangle}> 
+      <Text style={{fontFamily: 'Inter-SemiBold', fontSize: 50, marginTop: -55, color: '#4C6663'}}>
+        petals</Text>
 
-      <Image source={require('./images/daisy.png')} style = {{marginTop: 40}}/>
-      
-      <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 10, fontSize: 28, color: '#000'}}>
-        Today's Task</Text> 
-      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360,marginLeft: 40 }} />
+        <Text style={{fontFamily: 'Inter-Regular', fontSize: 25, paddingTop: 50, textAlign:'center', color: '#000'}}>
+          I am a...</Text>
 
+        <Image source={require('./images/doctor.png')} style = {{marginTop: 40}}/>
         <TouchableOpacity style={styles.button1}>
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
                   healthcare provider/organization</Text>
@@ -33,6 +28,7 @@ function PatientHome() {
                   patient</Text>
         </TouchableOpacity>
 
+      </View>
     
     </View>
   );
@@ -70,4 +66,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PatientHome;
+export default LandingScreen;
