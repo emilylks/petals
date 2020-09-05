@@ -8,6 +8,7 @@ function PatientHomeScreen({ navigation }) {
   const { logout } = useContext(AuthContext);
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
+        <View style={{height: 30}} />
         <TouchableOpacity style={{height: 50, width: 80, backgroundColor: '#4C6663',
                                   alignItems: 'center'}}
                           onPress={() => logout()}>
