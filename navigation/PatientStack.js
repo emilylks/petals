@@ -9,7 +9,9 @@ const Drawer = createDrawerNavigator();
 
 function PatientStack() {
   return (
-    <PatientHomeScreen />
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Home" component={PatientHomeScreen} />
+    </Drawer.Navigator>
   );
 }
 
