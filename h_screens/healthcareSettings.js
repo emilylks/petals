@@ -1,13 +1,23 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
-function patientSettings() {
+function healthcareSettings() {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.headerText}>
           Settings
         </Text>
+      </View>
+      <View style={{alignItems: 'center', width:350, marginBottom: 20}}>
+        <Text style={{fontSize:16}}>
+          Link a pre-existing form (ex. appointments)
+        </Text>
+        <TextInput style={styles.input}
+                   placeholder = 'Paste a link to your form here'
+                   autoCapitalize='none'
+                   autoCorrect={false}>
+        </TextInput>
       </View>
       <TouchableOpacity style={styles.settingsButtons}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
@@ -29,12 +39,6 @@ function patientSettings() {
           Sign Out
         </Text>
       </TouchableOpacity>
-      <View style={{justifyContent: 'center', alignItems: 'center', width: 350, marginBottom: 20, marginTop: 20}}>
-        <Text style={{fontSize: 12, color: 'black', fontStyle: 'italic', textAlign: 'center'}}>
-          Note: if you have changed healthcare providers, please sign out and
-          log in with the updated provider ID. This is for enhanced security.
-        </Text>
-      </View>
     </View>
   );
 }
@@ -49,12 +53,6 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginBottom: 50,
   },
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width:350,
-    marginBottom: 20,
-  },
   headerText: {
     color: 'black',
     fontSize: 30,
@@ -64,8 +62,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFF',
   },
+  input: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#4E96AD',
+    width: 350,
+    height: 40,
+    textAlign: 'center',
+    fontSize: 16,
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 1,
+        height: 1,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 1,
+    elevation: 2,
+  },
   settingsButtons: {
-    marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
@@ -87,5 +102,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default patientSettings;
+export default healthcareSettings;
 
