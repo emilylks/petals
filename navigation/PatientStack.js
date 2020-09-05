@@ -2,13 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-<<<<<<< HEAD
 import { Text, Image, StyleSheet, View, TouchableOpacity } from 'react-native';
 import PatientHomeScreen from '../p_screens/PatientHomeScreen.js';
-=======
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import PatientHomeStack from './PatientHomeStack.js';
->>>>>>> 2c89a1fe2c128434755b7dc13ee77a9733cab228
 import patientProgress from '../p_screens/patientProgress.js';
 import patientBookApp from '../p_screens/patientBookApp.js';
 import patientClinics from '../p_screens/patientClinics.js';
@@ -24,7 +19,6 @@ function PatientStack() {
   return (
     <View style={{flex:1}}> 
     <Drawer.Navigator initialRouteName="Home">
-<<<<<<< HEAD
       
       <Drawer.Screen name="Profile" component={patientUpdate} options = {{
                    drawerLabel: config => (<View style={{ flexDirection: 'column'}} > 
@@ -49,13 +43,6 @@ function PatientStack() {
       <Drawer.Screen name="Settings" component={patientSettings} options = {{
                    drawerIcon: config => ( <SimpleLineIcons name="settings" color="black" size={26} /> ),
                   }}/>
-=======
-      <Drawer.Screen name="Home" component={PatientHomeStack} />
-      <Drawer.Screen name="Progress" component={patientProgress} />
-      <Drawer.Screen name="Book an Appointment" component={patientBookApp} />
-      <Drawer.Screen name="Find a Clinic" component={patientClinics} />
-      <Drawer.Screen name="Settings" component={patientSettings} />
->>>>>>> 2c89a1fe2c128434755b7dc13ee77a9733cab228
     </Drawer.Navigator>
 
     </View>
