@@ -1,70 +1,50 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
-function patientInfo() {
+function healthcarePatients() {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.headerText}>
-          BILLY JIM
+          PATIENTS
         </Text>
         </View>
-      <View style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-      }}>
-        <TouchableOpacity style={styles.reportBut}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          REPORTS
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.newReportBut}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          NEW REPORT
-        </Text>
-      </TouchableOpacity>
-      </View>
       <View style={styles.container}> 
         <Text style={styles.promptText}> 
-          Name:
+          Name
         </Text>
-        <TextInput style={styles.input} placeholder = 'Jim, Billy'>
+        <TextInput style={styles.input} placeholder = ' '>
         </TextInput>
       </View>
       <View style={styles.container}> 
-        <Text style={styles.promptText}>
-          Birthdate:
-        </Text>
-        <TextInput style={styles.input} placeholder = '01/21/1972'>
+        <TextInput style={styles.input} placeholder = ' '>
         </TextInput>
       </View>
       <View style={styles.container}> 
-        <Text style={styles.promptText}>
-          Phone Number:
-        </Text>
-        <TextInput style={styles.input} placeholder = '(604)-283-1389'>
+        <TextInput style={styles.input} placeholder = ' '>
         </TextInput>
       </View>
       <View style={styles.container}> 
-        <Text style={styles.promptText}>
-          Address:
-        </Text>
-        <TextInput style={styles.input} placeholder = '222 Royal Birch View, Vancouver BC Canada V1N 9A2'>
+        <TextInput style={styles.input} placeholder = ' '>
+        </TextInput>
+      </View>
+      <View style={styles.container}> 
+        <TextInput style={styles.input} placeholder = ' '>
+        </TextInput>
+      </View>
+      <View style={styles.container}> 
+        <TextInput style={styles.input} placeholder = ' '>
         </TextInput>
       </View>
       <View style={styles.promptText}>
       </View>
       <View style={styles.container}> 
-        <Text style={styles.promptText}> 
-          Medical History:
-        </Text>
-        <TextInput style={styles.input} placeholder = 'History of angina, takes nitroglycerin'>
+        <TextInput style={styles.input} placeholder = ' '>
         </TextInput>
         </View>
-      <TouchableOpacity style={styles.updateBut}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          UPDATE
+      <TouchableOpacity style={styles.addBut}>
+        <Text style={{fontSize: 30, textAlign: 'center', color: 'white'}}>
+          +
         </Text>
       </TouchableOpacity>
     </View>
@@ -73,7 +53,7 @@ function patientInfo() {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#4C6663',
+    backgroundColor: '#4E96AD',
     height: 85,
     width: 415,
     justifyContent: 'center',
@@ -81,8 +61,8 @@ const styles = StyleSheet.create({
     marginBottom: 75,
   },
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     marginBottom: 20,
   },
   headerText: {
@@ -119,46 +99,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         // letterSpacing: 4,
   },
-  reportBut: {
-    marginTop: -50,
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-    backgroundColor: '#4E96AD',
-    borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
-    width: 160,
-    height: 75,
-  },
-  newReportBut: {
-    marginTop: -50,
+  addBut: {
+    marginTop: 10,
+    marginRight: 35,
     justifyContent: 'center',
     alignSelf: 'flex-end',
     backgroundColor: '#4E96AD',
-    borderRadius: 30,
+    borderRadius: 50,
     borderWidth: 1,
     borderColor: '#CDCDC6',
-    width: 160,
-    height: 75,
-  },
-  updateBut: {
-    marginTop: 10,
-    justifyContent: 'center',
-    backgroundColor: '#4E96AD',
-    borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
-    width: 160,
+    width: 60,
     height: 60,
   }
 });
 
 
 
-export default patientInfo;
-
-
-
+export default healthcarePatients;
 
 
 
