@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
 function patientInfo() {
   return (
@@ -9,7 +9,14 @@ function patientInfo() {
           BILLY JIM
         </Text>
         </View>
-      <TouchableOpacity style={styles.reportBut}>
+      <View style={{
+        marginTop: 0,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
+        <TouchableOpacity style={styles.reportBut}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
           REPORTS
         </Text>
@@ -19,6 +26,7 @@ function patientInfo() {
           NEW REPORT
         </Text>
       </TouchableOpacity>
+      </View>
       <View style={styles.container}> 
         <Text style={styles.promptText}> 
           Name:
@@ -114,29 +122,27 @@ const styles = StyleSheet.create({
         // letterSpacing: 4,
   },
   reportBut: {
-    marginTop: -50,
     justifyContent: 'center',
     alignSelf: 'flex-start',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
     borderWidth: 1,
     borderColor: '#CDCDC6',
-    width: 160,
-    height: 60,
+    width: 150,
+    height: 70,
   },
   newReportBut: {
-    marginTop: -50,
     justifyContent: 'center',
     alignSelf: 'flex-end',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
     borderWidth: 1,
     borderColor: '#CDCDC6',
-    width: 160,
-    height: 60,
+    width: 150,
+    height: 70,
   },
   updateBut: {
-    marginTop: 10,
+    marginBottom: 20,
     justifyContent: 'center',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
@@ -147,4 +153,12 @@ const styles = StyleSheet.create({
   }
 });
 
+
+
 export default patientInfo;
+
+
+
+
+
+
