@@ -15,6 +15,15 @@ function healthcarePatients() {
           Name
         </Text>
         </View>
+    
+        <View style={{
+           borderBottomColor: 'black',
+           borderBottomWidth: 1,
+           width: 400,
+           marginTop: -20,
+           marginBottom: 40
+           }}>
+             </View>
 
         <TouchableOpacity style={styles.container}>
         <View style={styles.input}>
