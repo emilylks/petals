@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { AuthContext } from './AuthProvider';
-import MainStack from './MainStack';
-import LoginStack from './LoginStack';
-import PatientStack from './PatientStack';
+import HealthStack from './HealthStack.js';
+import LoginStack from './LoginStack.js';
+import PatientStack from './PatientStack.js';
 
 export default function Routes() {
   const { user, setUser } = useContext(AuthContext);
@@ -28,7 +28,7 @@ export default function Routes() {
   return (
     <NavigationContainer >
       {user ?
-        (userType == "provider" ? <MainStack /> : <PatientStack />)
+        (userType == "provider" ? <HealthStack /> : <PatientStack />)
         : <LoginStack />}
     </NavigationContainer>
   );

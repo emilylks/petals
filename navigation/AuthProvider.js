@@ -20,20 +20,26 @@ export const AuthProvider = ({ children }) => {
         user,
         setUser,
         userType,
-        login: async (email, password) => {
+        setUserType,
+        loginPatient: async (email, password) => {
           try {
             await auth().signInWithEmailAndPassword(email, password)
-            .then((user => {
-              try {
-                const type = firestore().collection('doctors')
-                             .doc(user.user.uid).get().type;
-                setUserType(type);
-              } catch (e) {
-                const type = firestore().collection('patients')
-                             .doc(user.user.uid).get().type;
-                setUserType(type);
-              }
-            }));
+            .then(() => {
+              setUserType("patient");
+              console.log(userType);
+            });
+          } catch (e) {
+            console.log(e);
+            console.log('Sign in Failed');
+          }
+        },
+        loginProvider: async (email, password) => {
+          try {
+            await auth().signInWithEmailAndPassword(email, password)
+            .then(() => {
+              setUserType("provider");
+              console.log(userType);
+            });
           } catch (e) {
             console.log(e);
             console.log('Sign in Failed');
@@ -44,6 +50,7 @@ export const AuthProvider = ({ children }) => {
             await auth().createUserWithEmailAndPassword(email, password)
             .then((user) => {
               setUserType("provider");
+              console.log(userType);
               const db = firestore();
               const user_id = user.user.uid; // comes from auth
               console.log(user_id);
@@ -80,6 +87,7 @@ export const AuthProvider = ({ children }) => {
               const db = firestore();
               const doc_id = user.user.uid;
               console.log(doc_id);
+              console.log(userType);
               const userRef = db.collection('patients').doc(doc_id);
               userRef.set({
                 email,
@@ -108,7 +116,11 @@ export const AuthProvider = ({ children }) => {
         },
         logout: async () => {
           try {
-            await auth().signOut();
+            await auth().signOut()
+            .then(() => {
+              setUserType("null");
+              console.log(userType);
+            });
           } catch (e) {
             console.error(e);
             console.log('Sign out Failed');

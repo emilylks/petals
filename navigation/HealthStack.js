@@ -1,13 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import HealthHomeScreen from '../h_screens/HealthHomeScreen.js';
 
-function MainStack() {
+function HealthStack() {
   return (
-    <View>
-      <Text>Main Stack</Text>
-    </View>
+    <HealthHomeScreen />
   );
 }
 
-export default MainStack;
+export default HealthStack;
