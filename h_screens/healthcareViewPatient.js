@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
 
-function patientInfo() {
+function healthcareViewPatient({ navigation }) {
+  const [editable, changeEditable] = useState(false);
+  const [phone, changePhone] = useState('');
+  const [name, changeName] = useState('');
+  const [address, changeAddress] = useState('');
+  const { registerPatient } = useContext(AuthContext);
+
+  /*useEffect(() => {
+    const subscriber = firestore()
+      .collection('users')
+      .doc(usr.uid)
+      .onSnapshot(documentSnapshot => {
+          const score = [];
+          score.push(Math.trunc(documentSnapshot.data().score));
+          getUserScore(score);
+          console.log('User data: ', documentSnapshot.data());
+      });
+    return () => subscriber();
+  }, []);*/
+
   return (
     <View style={styles.background}>
       <View style={styles.header}>
@@ -10,45 +30,52 @@ function patientInfo() {
         </Text>
         </View>
       <View style={{
-        marginTop: 0,
-        flex: 1,
+        marginTop: 30,
+        marginBottom: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
         <TouchableOpacity style={styles.reportBut}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          REPORTS
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.newReportBut}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          NEW REPORT
-        </Text>
-      </TouchableOpacity>
+          <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
+            REPORTS
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.newReportBut}>
+          <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
+            NEW REPORT
+          </Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.container}> 
-        <Text style={styles.promptText}> 
+      <View style={styles.container}>
+        <Text style={styles.promptText}>
           Name:
         </Text>
         <TextInput style={styles.input} placeholder = 'Jim, Billy'>
         </TextInput>
       </View>
-      <View style={styles.container}> 
+      <View style={styles.container}>
+        <Text style={styles.promptText}>
+          ID:
+        </Text>
+        <TextInput style={styles.input} placeholder = 'Patient ID'>
+        </TextInput>
+      </View>
+      <View style={styles.container}>
         <Text style={styles.promptText}>
           Birthdate:
         </Text>
         <TextInput style={styles.input} placeholder = '01/21/1972'>
         </TextInput>
       </View>
-      <View style={styles.container}> 
+      <View style={styles.container}>
         <Text style={styles.promptText}>
           Phone Number:
         </Text>
         <TextInput style={styles.input} placeholder = '(604)-283-1389'>
         </TextInput>
       </View>
-      <View style={styles.container}> 
+      <View style={styles.container}>
         <Text style={styles.promptText}>
           Address:
         </Text>
@@ -57,14 +84,7 @@ function patientInfo() {
       </View>
       <View style={styles.promptText}>
       </View>
-      <View style={styles.container}> 
-        <Text style={styles.promptText}> 
-          Medical History:
-        </Text>
-        <TextInput style={styles.input} placeholder = 'History of angina, takes nitroglycerin'>
-        </TextInput>
-        </View>
-      <TouchableOpacity style={styles.updateBut}>
+      <TouchableOpacity style={styles.updateBut} onPress={() => navigation.goBack()}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
           UPDATE
         </Text>
@@ -76,11 +96,10 @@ function patientInfo() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 85,
+    height: 100,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 75,
   },
   container: {
     justifyContent: 'center',
@@ -89,7 +108,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'white',
-    fontSize: 30,
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 25,
   },
   promptText: {
     color: 'black',
@@ -98,11 +118,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     alignSelf: 'stretch',
     paddingBottom: 5,
-  },
-  img: { 
-    width: 100,
-    height: 100,
-    borderRadius: 100/2,
   },
   background: {
     flex: 1,
@@ -123,21 +138,16 @@ const styles = StyleSheet.create({
   },
   reportBut: {
     justifyContent: 'center',
-    alignSelf: 'flex-start',
+    marginRight: 20,
     backgroundColor: '#4E96AD',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 150,
     height: 70,
   },
   newReportBut: {
     justifyContent: 'center',
-    alignSelf: 'flex-end',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 150,
     height: 70,
   },
@@ -146,8 +156,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 160,
     height: 60,
   }
@@ -155,10 +163,4 @@ const styles = StyleSheet.create({
 
 
 
-export default patientInfo;
-
-
-
-
-
-
+export default healthcareViewPatient;

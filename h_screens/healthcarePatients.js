@@ -1,51 +1,70 @@
-import React from 'react';
-import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity, FlatList, Dimensions} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
-function healthcarePatients() {
+const window = Dimensions.get("window");
+const height = window.height;
+const width = window.width;
+
+function healthcarePatients({ navigation }) {
+  var usr = firebase.auth().currentUser;
+  const [patients, setPatients] = useState([]);
+
+  useEffect(() => {
+    const subscriber = firestore()
+      .collection('doctors')
+      .doc(usr.uid)
+      .collection('patients')
+      .orderBy('name','desc') // initially order by date
+      .onSnapshot(querySnapshot => {
+        const p = [];
+
+        querySnapshot.forEach(documentSnapshot => {
+          p.push({
+            ...documentSnapshot.data(),
+            key: documentSnapshot.id,
+          });
+        });
+
+        setPatients(p);
+        patients.sort(function(a, b) {
+          if(a.name < b.name) { return 1; }
+          if(a.name > b.name) { return -1; }
+              return 0;
+          });
+      });
+
+    // Unsubscribe from events when no longer in use
+    return () => subscriber();
+  }, []);
   return (
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.headerText}>
           PATIENTS
         </Text>
-        </View>
-      <View style={styles.container}> 
-        <Text style={styles.promptText}> 
-          Name
-        </Text>
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
       </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-      </View>
-      <View style={styles.promptText}>
-      </View>
-      <View style={styles.container}> 
-        <TextInput style={styles.input} placeholder = ' '>
-        </TextInput>
-        </View>
+      <FlatList
+        data={patients}
+        extraData={patients}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <TouchableOpacity style={styles.listItem}
+                onPress={() => navigation.navigate('View Patient')}>
+            <Text style={styles.itemText}>{item.name} ({item.givenID})</Text>
+          </TouchableOpacity>
+        )}
+      />
       <TouchableOpacity style={styles.addBut}>
-        <Text style={{fontSize: 30, textAlign: 'center', color: 'white'}}>
-          +
-        </Text>
+        <AntDesign name="plus" color={'#fff'} size={26}
+                   onPress={() => { navigation.navigate('New Patient', {
+                                    edit: true,
+                                    newUser: true
+                                  });}}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -54,7 +73,7 @@ function healthcarePatients() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 85,
+    height: 100,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -67,6 +86,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'white',
+    fontFamily: 'Inter-SemiBold',
     fontSize: 30,
   },
   promptText: {
@@ -77,7 +97,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     paddingBottom: 5,
   },
-  img: { 
+  img: {
     width: 100,
     height: 100,
     borderRadius: 100/2,
@@ -102,20 +122,30 @@ const styles = StyleSheet.create({
   addBut: {
     marginTop: 10,
     marginRight: 35,
+    marginBottom: 120,
+    alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-end',
     backgroundColor: '#4E96AD',
     borderRadius: 50,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 60,
     height: 60,
+  },
+  listItem: {
+    height: 50,
+    width: width,
+    backgroundColor: '#C9D7F8',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#000',
+    borderWidth: 0.5
+  },
+  itemText: {
+    fontSize: 18,
+    fontFamily: 'Inter-Medium'
   }
 });
 
 
 
 export default healthcarePatients;
-
-
-

@@ -79,20 +79,22 @@ export const AuthProvider = ({ children }) => {
             }
           }
         },
-        registerPatient: async (id, name, bday, email, password) => {
+        registerPatient: async (address, doctorID, givenID, phone, name, bday, email, password) => { // doctor does this
           try {
             await auth().createUserWithEmailAndPassword(email, password)
             .then((user) => {
               setUserType("patient");
               const db = firestore();
-              const doc_id = user.user.uid;
-              console.log(doc_id);
+              const patient_id = user.user.uid;
+              console.log(patient_id);
               console.log(userType);
-              const userRef = db.collection('patients').doc(doc_id);
+              const userRef = db.collection('doctors').doc(doctorID)
+                                .collection('patients').doc(patient_id);
               userRef.set({
                 email,
-                id,
-                doc_id,
+                doctorID,
+                givenID,
+                patient_id,
                 name,
                 bday
               });
