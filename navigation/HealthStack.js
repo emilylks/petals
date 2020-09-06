@@ -4,7 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
 import HealthHomeScreen from '../h_screens/HealthHomeScreen.js';
 import healthcareAlerts from '../h_screens/healthcareAlerts.js';
-import healthcarePatientStack from './healthcarePatientStack.js';
+import healthcarePatients from '../h_screens/healthcarePatients.js';
 import healthcareCalendar from '../h_screens/healthcareCalendar.js';
 import healthcareSettings from '../h_screens/healthcareSettings.js';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';

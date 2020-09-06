@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Octicons';
 function HealthHomeScreen({ navigation }) {
 
   return (
-    <View style={{ backgroundColor: '#FFF'}}>
+  <View style={{ flex: 1, backgroundColor: '#FFF'}}>
     <Icon.Button
       name="three-bars"
       color="#000"
@@ -22,29 +22,26 @@ function HealthHomeScreen({ navigation }) {
 
     <Image source={require('../images/daisy.png')} style = {{marginTop: -80, marginLeft: 260, width: 100, height: 100, borderRadius: 100}}/>
 
-    <View style={{ alignSelf: 'center', marginTop: 30}}>
-    <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 20, fontSize: 20, color: '#000', textAlign: 'center'}}>
-    TODAY'S APPOINTMENTS:</Text>
-    <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
-
-
+    
+      <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 50, fontSize: 20, color: '#000', textAlign: 'center'}}>
+      TODAY'S APPOINTMENTS:</Text>
+      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360, alignSelf: 'center'}} />
+      
       <TouchableOpacity style={styles.button}>
-            <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
-               O Task Name</Text>
+          <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
+           Task Name</Text>
       </TouchableOpacity>
-
       <TouchableOpacity style={styles.button}>
-            <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
-            Task Name</Text>
-      </TouchableOpacity>
-    </View>
-
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
+              Task Name</Text>
+        </TouchableOpacity>
   </View>
 );
 }
 
 const styles = StyleSheet.create({
 button: {
+  alignSelf: 'center',
   backgroundColor: '#C9D7F8',
   margin: 5,
   padding: 5,
