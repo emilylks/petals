@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext }  from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
 
 function patientSettings() {
+  const { logout } = useContext(AuthContext);
   return (
     <View style={styles.background}>
       <View style={styles.header}>
@@ -24,7 +26,7 @@ function patientSettings() {
           Dark Mode
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.settingsButtons}>
+      <TouchableOpacity style={styles.settingsButtons} onPress={() => logout()}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
           Sign Out
         </Text>
