@@ -4,6 +4,7 @@ import { AuthContext } from '../navigation/AuthProvider';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 function healthcareViewPatient({ route, navigation }) {
   var usr = firebase.auth().currentUser;
@@ -13,24 +14,17 @@ function healthcareViewPatient({ route, navigation }) {
   const { dob } = route.params;
   const { phone } = route.params;
   const { address } = route.params;
-  const [editable, changeEditable] = useState(false);
+  const [canEdit, changeCanEdit] = useState(false);
   const [phoneNum, changePhoneNum] = useState(phone);
   const [name, changeName] = useState(patientName);
   const [addr, changeAddr] = useState(address);
 
-  /*useEffect(() => {
-    setUserType("provider");
-    const subscriber = firestore()
-      .collection('doctors')
-      .doc(usr.uid)
-      .onSnapshot(documentSnapshot => {
-          const score = [];
-          score.push(Math.trunc(documentSnapshot.data().score));
-          getUserScore(score);
-          console.log('User data: ', documentSnapshot.data());
-      });
+  useEffect(() => {
+    const subscriber = () => {
+      setUserType("provider");
+    }
     return () => subscriber();
-  }, []);*/
+  }, []);
 
   return (
     <View style={styles.background}>
@@ -38,9 +32,13 @@ function healthcareViewPatient({ route, navigation }) {
         <Text style={styles.headerText}>
           {name}
         </Text>
-        </View>
+      </View>
+      <AntDesign name="arrowleft" color={'#fff'} size={28}
+                 style={{marginTop: -60, marginLeft: -330}}
+                 onPress={() => navigation.goBack()}
+      />
       <View style={{
-        marginTop: 30,
+        marginTop: 60,
         marginBottom: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -61,35 +59,45 @@ function healthcareViewPatient({ route, navigation }) {
         <Text style={styles.promptText}>
           Name:
         </Text>
-        <TextInput style={styles.input} placeholder = {name} >
+        <TextInput style={styles.input}
+                   placeholder = {name}
+                   editable = {canEdit}>
         </TextInput>
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           ID:
         </Text>
-        <TextInput style={styles.input} placeholder = 'Patient ID'>
+        <TextInput style={styles.input}
+                   placeholder = {ID}
+                   editable = {canEdit} >
         </TextInput>
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Birthdate:
         </Text>
-        <TextInput style={styles.input} placeholder = '01/21/1972'>
+        <TextInput style={styles.input}
+                  placeholder = {dob}
+                  editable = {canEdit}>
         </TextInput>
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Phone Number:
         </Text>
-        <TextInput style={styles.input} placeholder = '(604)-283-1389'>
+        <TextInput style={styles.input}
+                   placeholder = {phone}
+                   editable = {canEdit}>
         </TextInput>
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Address:
         </Text>
-        <TextInput style={styles.input} placeholder = '222 Royal Birch View, Vancouver BC Canada V1N 9A2'>
+        <TextInput style={styles.input}
+                   placeholder = {address}
+                   editable = {canEdit}>
         </TextInput>
       </View>
       <View style={styles.promptText}>
@@ -136,15 +144,15 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#E5E5E5',
-        borderRadius: 1,
-        borderWidth: 1,
-        borderColor: '#CDCDC6',
-        width: 350,
-        height: 35,
-        textAlign: 'center',
-        fontStyle: 'italic',
-        fontSize: 14,
-        // letterSpacing: 4,
+    borderRadius: 1,
+    borderWidth: 1,
+    borderColor: '#CDCDC6',
+    width: 350,
+    height: 35,
+    textAlign: 'center',
+    fontStyle: 'italic',
+    fontSize: 14,
+    // letterSpacing: 4,
   },
   reportBut: {
     justifyContent: 'center',
