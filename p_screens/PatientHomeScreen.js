@@ -4,11 +4,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from '../navigation/AuthProvider';
 import Icon from 'react-native-vector-icons/Octicons';
-import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 function PatientHomeScreen({ navigation }) {
-  
+
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
       <Icon.Button
@@ -16,10 +16,10 @@ function PatientHomeScreen({ navigation }) {
         color="#000"
         backgroundColor = "#fff"
         size = {30}
-        style={{marginTop: 50, marginRight: 320}} 
+        style={{marginTop: 50, marginRight: 320}}
         onPress={() => navigation.openDrawer()}>
       </Icon.Button>
-     
+
       <Text style={{fontFamily: 'Inter-SemiBold', fontSize: 28, color: '#000'}}>
         Welcome back,</Text>
 
