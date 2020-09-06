@@ -69,7 +69,7 @@ function healthcarePatients({ navigation }) {
                   phone: item.phone_number,
                   address: item.address
                 })}>
-            <Text style={styles.itemText}>{item.name} ({item.givenID})</Text>
+            <Text style={styles.itemText}>{item.name} </Text>
           </TouchableOpacity>
         )}
       />

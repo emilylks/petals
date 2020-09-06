@@ -19,10 +19,10 @@ function HealthStack() {
 
       <Drawer.Screen name="Profile" component={HealthHomeScreen} options = {{
                    drawerLabel: config => (<View style={{ flexDirection: 'column'}} >
-                                            <Text style={{ fontSize: 20, marginTop: 30, marginLeft: -20}}>doctor Name</Text>
-                                            <Text style={{ fontSize: 15, marginLeft: -20}}>doctor id </Text>
+                                            <Text style={{ fontSize: 20, marginTop: 30, marginLeft: -20}}>Dr. Joe Brown</Text>
+                                            <Text style={{ fontSize: 15, marginLeft: -20}}>ID: 98765 </Text>
                                           </View>),
-                   drawerIcon: config => ( <Image source={require('../images/doctor.png')} style={{ marginTop: 40, width: 50, height: 50}}/> ),
+                   drawerIcon: config => ( <Image source={require('../images/male-doctor.png')} style={{ marginTop: 40, width: 50, height: 50}}/> ),
 
                   }}/>
       <Drawer.Screen name="Home" component={HealthHomeScreen} options = {{

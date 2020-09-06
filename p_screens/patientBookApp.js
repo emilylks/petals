@@ -151,12 +151,11 @@ const styles = StyleSheet.create({
     width: 415,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    marginTop: 25,
+    marginTop: 35,
     marginBottom: 20,
   },
   headerText: {
     color: 'black',
-    fontWeight: 'bold',
     fontSize: 30,
     fontFamily: 'Inter-SemiBold'
   },
@@ -168,7 +167,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
-    marginTop: 10
+    marginTop: 5
   },
   promptText: {
     fontFamily: 'Inter-SemiBold',

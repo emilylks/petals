@@ -16,11 +16,10 @@ function HealthHomeScreen({ navigation }) {
     </Icon.Button>
    
     <Text style={{fontFamily: 'Inter-SemiBold', fontSize: 28, color: '#000', marginLeft: 50, marginTop: 20}}>
-      Doctor Name</Text>
-    <Text style={{fontFamily: 'Inter-Regular', marginTop: -10, fontSize: 20, color: '#000',  marginLeft: 50}}>
-      doctor ID</Text>
+      Dr. Joe Brown</Text>
+    <Text style={{fontFamily: 'Inter-Regular', marginTop: -10, fontSize: 20, color: '#000',  marginLeft: 50}}> ID: 98765</Text>
 
-    <Image source={require('../images/daisy.png')} style = {{marginTop: -80, marginLeft: 260, width: 100, height: 100, borderRadius: 100}}/>
+    <Image source={require('../images/male-doctor.png')} style = {{marginTop: -80, marginLeft: 260, width: 100, height: 100, borderRadius: 100}}/>
 
     
       <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 50, fontSize: 20, color: '#000', textAlign: 'center'}}>

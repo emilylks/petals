@@ -171,8 +171,8 @@ function healthcareNewTaskpt2({ navigation }) {
         <Text style={styles.headerText}>
           NEW REPORT:
         </Text>
-        <Text style={{fontSize:25, color: 'white', marginTop: -10}}>
-          Tor Aamodt
+        <Text style={{fontSize:25, color: 'white', marginTop: -5}}>
+          Smith, Dan
         </Text>
       </View>
       <AntDesign name="arrowleft" color={'#fff'} size={28}

@@ -22,8 +22,8 @@ function PatientStack() {
 
       <Drawer.Screen name="Profile" component={patientUpdate} options = {{
                    drawerLabel: config => (<View style={{ flexDirection: 'column'}} >
-                                            <Text style={{ fontSize: 20, marginTop: 30, marginLeft: -20}}>Patient Name</Text>
-                                            <Text style={{ fontSize: 15, marginLeft: -20}}>patient id </Text>
+                                            <Text style={{ fontSize: 20, marginTop: 30, marginLeft: -20}}>Dan Smith</Text>
+                                            <Text style={{ fontSize: 15, marginLeft: -20}}>ID: 123456</Text>
                                           </View>),
                    drawerIcon: config => ( <Image source={require('../images/daisy.png')} style={{ marginTop: 40, width: 50, height: 50, borderRadius: 20}}/> ),
 

@@ -20,7 +20,7 @@ function patientProgress({navigation}) {
       </Icon.Button>
 
         <Text style={styles.headerText}>
-          Patient's Progress
+          Dan's Progress
         </Text>
   
         <Calendar
