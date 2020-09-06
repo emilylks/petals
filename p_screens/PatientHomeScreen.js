@@ -30,20 +30,24 @@ function PatientHomeScreen({ navigation }) {
 
       <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 20, fontSize: 28, color: '#000'}}>
         Today's Tasks</Text>
-      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
+      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 300 }} />
 
 
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
               <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/>
-              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
-                 Task Name</Text>
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>        Exercise # 1        </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
               <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/>
-              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
-                 Task Name</Text>
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>        Exercise # 2        </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
+              <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/>
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>        Exercise # 3        </Text>
+        </TouchableOpacity>
+
 
     </View>
   );

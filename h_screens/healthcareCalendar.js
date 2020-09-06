@@ -75,13 +75,13 @@ function patientProgress({navigation}) {
           <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
             { <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/> }
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
-                 Task Name</Text>
+                 L, Emily 9:00AM</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
             { <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/> }
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
-                Task Name</Text>
+                  T, Ethan 1:00PM</Text>
           </TouchableOpacity>
       </View>
     </View>

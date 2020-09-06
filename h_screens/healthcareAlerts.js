@@ -39,7 +39,7 @@ function healthcareAlerts({navigation}) {
 
         <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>Billy Jim</Text>
+        <Text style={styles.promptText}>Smith, Dan</Text>
         </View>
       </TouchableOpacity>
 
