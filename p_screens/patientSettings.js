@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
 
-function patientSettings() {
+
+function patientSettings({ navigation }) {
+  const { logout } = useContext(AuthContext);
+
   return (
     <View style={styles.background}>
       <View style={styles.header}>
@@ -9,12 +14,12 @@ function patientSettings() {
           Settings
         </Text>
       </View>
-      <TouchableOpacity style={styles.settingsButtons}>
+      <TouchableOpacity style={styles.settingsButtons} onPress={() => navigation.navigate('UpdateProfile')}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
           Update Profile
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.settingsButtons}>
+      <TouchableOpacity style={styles.settingsButtons} onPress={() => navigation.navigate('ChangePassword')}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
           Change Password
         </Text>
@@ -24,7 +29,7 @@ function patientSettings() {
           Dark Mode
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.settingsButtons}>
+      <TouchableOpacity style={styles.settingsButtons} onPress={() => logout()}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
           Sign Out
         </Text>

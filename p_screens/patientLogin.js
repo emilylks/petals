@@ -79,7 +79,7 @@ function patientLogin({navigation}) {
                    onChangeText = {onChangePassword}>
         </TextInput>
       </View>
-      <View style={{height: 20}} />
+      <View style={{height: -50}} />
       <TouchableOpacity style={styles.confirmationButton}
                         onPress={() => registerPatient(ID, name, bday, email, password)}>
         <Text style={{fontSize: 13, textAlign: 'center', color: 'white'}}>

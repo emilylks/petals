@@ -7,7 +7,7 @@ import PatientHomeStack from './PatientHomeStack.js';
 import patientProgress from '../p_screens/patientProgress.js';
 import patientBookApp from '../p_screens/patientBookApp.js';
 import patientClinics from '../p_screens/patientClinics.js';
-import patientSettings from '../p_screens/patientSettings.js';
+import PatientSettingStack from './PatientSettingStack.js';
 import patientUpdate from '../p_screens/patientUpdate.js';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -40,7 +40,7 @@ function PatientStack() {
       <Drawer.Screen name="Find a Clinic" component={patientClinics} options = {{
                     drawerIcon: config => ( <MaterialCommunityIcons name="hospital-box" color="black" size={26} /> ),
                   }}/>
-      <Drawer.Screen name="Settings" component={patientSettings} options = {{
+      <Drawer.Screen name="Settings" component={PatientSettingStack} options = {{
                    drawerIcon: config => ( <SimpleLineIcons name="settings" color="black" size={26} /> ),
                   }}/>
     </Drawer.Navigator>

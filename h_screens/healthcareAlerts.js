@@ -1,9 +1,12 @@
+import React, { useContext} from 'react';
+import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
-import React from 'react';
-import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+function healthcareAlerts({navigation}) {
 
-function alerts() {
   return (
+
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.headerText}>
@@ -26,7 +29,7 @@ function alerts() {
              </View>
 
 
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         <Text style={styles.promptText}>
           Billy Jim
@@ -34,32 +37,32 @@ function alerts() {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
         </View>
       </TouchableOpacity>
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
 
 
 
-export default alerts;
+export default healthcareAlerts;
 
 
 
