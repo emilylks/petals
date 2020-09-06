@@ -49,7 +49,8 @@ function healthcareViewPatient({ route, navigation }) {
             REPORTS
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.newReportBut}>
+        <TouchableOpacity style={styles.newReportBut}
+                          onPress={() => navigation.navigate('New Task pt1')}>
           <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
             NEW REPORT
           </Text>

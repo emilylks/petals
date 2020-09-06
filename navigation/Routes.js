@@ -28,7 +28,7 @@ export default function Routes() {
   return (
     <NavigationContainer >
       {user ?
-        (userType == "provider" ? <HealthStack /> : <PatientStack />)
+        (userType == "provider" ? <HealthStack /> : <HealthStack />)
         : <LoginStack />}
     </NavigationContainer>
   );

@@ -10,7 +10,7 @@ const window = Dimensions.get("window");
 const height = window.height;
 const width = window.width;
 
-function patientClinics({ navigation }) {
+function healthcareNewTaskpt2({ navigation }) {
   const [MCTitle, setMCTitle] = useState("title");
   const onChangeMCTitle = (textValue) => setMCTitle(textValue);
   const [editMC, setEditMC] = useState(false);
@@ -182,7 +182,7 @@ function patientClinics({ navigation }) {
       </View>
       <AntDesign name="arrowleft" color={'#fff'} size={28}
                  style={{marginTop: -65, marginLeft: -330}}
-
+                 onPress={() => navigation.goBack()}
       />
       <View style={{marginTop: 30}}>
           <Text style={{textAlign: 'center', fontFamily: 'Inter-SemiBold', fontSize: 20, color: '#4E96AD'}}> Set Patient's Daily Tasks</Text>
@@ -229,7 +229,8 @@ function patientClinics({ navigation }) {
         )}
       />
 
-    <TouchableOpacity style={styles.submitButton}>
+    <TouchableOpacity style={styles.submitButton}
+                      onPress={() => navigation.navigate('Patients')}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
           ENTER
         </Text>
@@ -337,4 +338,4 @@ const styles = StyleSheet.create({
 
 
 
-export default patientClinics;
+export default healthcareNewTaskpt2;

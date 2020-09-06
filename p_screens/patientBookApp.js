@@ -55,7 +55,7 @@ function bookAppointment() {
             onChange={onChange}
           />
         )}
-      </View> 
+      </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Describe your symptoms
@@ -68,7 +68,7 @@ function bookAppointment() {
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
-          Have you travelled internationally in the past 14 days? 
+          Have you travelled internationally in the past 14 days?
         </Text>
         <RNPickerSelect
              style={pickerSelectStyles}
@@ -78,12 +78,12 @@ function bookAppointment() {
               items={[
                 { label: 'Yes', value: 'Yes' },
                 { label: 'No', value: 'No' },
-              ]}  
+              ]}
           />
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
-          Have you tested positive for COVID-19? 
+          Have you tested positive for COVID-19?
         </Text>
         <RNPickerSelect
              style={pickerSelectStyles}
@@ -93,12 +93,12 @@ function bookAppointment() {
               items={[
                 { label: 'Yes', value: 'Yes' },
                 { label: 'No', value: 'No' },
-              ]}  
+              ]}
           />
       </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
-          Do you display any of the following symptoms? 
+          Do you display any of the following symptoms?
         </Text>
         <FlatList
             data={[
@@ -122,7 +122,7 @@ function bookAppointment() {
               items={[
                 { label: 'Yes', value: 'Yes' },
                 { label: 'No', value: 'No' },
-              ]}  
+              ]}
           />
       </View>
       <TouchableOpacity style={styles.confirmationButton}>
@@ -246,4 +246,3 @@ const pickerSelectStyles = StyleSheet.create({
 });
 
 export default bookAppointment;
-
