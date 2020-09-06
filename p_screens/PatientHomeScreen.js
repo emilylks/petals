@@ -26,7 +26,7 @@ function PatientHomeScreen({ navigation }) {
       <Text style={{fontFamily: 'Inter-SemiBold', marginTop: -10, fontSize: 28, color: '#4E96AD'}}>
         Patient Name</Text>
 
-      <Image source={require('../images/daisy.png')} style = {{marginTop: 40}}/>
+      <Image source={require('../images/1jpg.jpg')} style = {{width: 200, height: 200, marginTop: 40, marginBottom: 30}}/>
 
       <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 20, fontSize: 28, color: '#000'}}>
         Today's Task</Text>
