@@ -1,17 +1,27 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { AuthContext } from '../navigation/AuthProvider';
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
-function healthcareViewPatient({ navigation }) {
+function healthcareViewPatient({ route, navigation }) {
+  var usr = firebase.auth().currentUser;
+  const { userType, setUserType } = useContext(AuthContext);
+  const { patientName } = route.params;
+  const { ID } = route.params;
+  const { dob } = route.params;
+  const { phone } = route.params;
+  const { address } = route.params;
   const [editable, changeEditable] = useState(false);
-  const [phone, changePhone] = useState('');
-  const [name, changeName] = useState('');
-  const [address, changeAddress] = useState('');
-  const { registerPatient } = useContext(AuthContext);
+  const [phoneNum, changePhoneNum] = useState(phone);
+  const [name, changeName] = useState(patientName);
+  const [addr, changeAddr] = useState(address);
 
   /*useEffect(() => {
+    setUserType("provider");
     const subscriber = firestore()
-      .collection('users')
+      .collection('doctors')
       .doc(usr.uid)
       .onSnapshot(documentSnapshot => {
           const score = [];
@@ -26,7 +36,7 @@ function healthcareViewPatient({ navigation }) {
     <View style={styles.background}>
       <View style={styles.header}>
         <Text style={styles.headerText}>
-          BILLY JIM
+          {name}
         </Text>
         </View>
       <View style={{
@@ -51,7 +61,7 @@ function healthcareViewPatient({ navigation }) {
         <Text style={styles.promptText}>
           Name:
         </Text>
-        <TextInput style={styles.input} placeholder = 'Jim, Billy'>
+        <TextInput style={styles.input} placeholder = {name} >
         </TextInput>
       </View>
       <View style={styles.container}>

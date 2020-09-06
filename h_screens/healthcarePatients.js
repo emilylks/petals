@@ -53,7 +53,13 @@ function healthcarePatients({ navigation }) {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.listItem}
-                onPress={() => navigation.navigate('View Patient')}>
+                onPress={() => navigation.navigate('View Patient', {
+                  patientName: item.name,
+                  ID: item.patient_id,
+                  dob: item.bday,
+                  phone: item.phone_number,
+                  address: item.address
+                })}>
             <Text style={styles.itemText}>{item.name} ({item.givenID})</Text>
           </TouchableOpacity>
         )}
