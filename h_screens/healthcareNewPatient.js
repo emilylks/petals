@@ -80,7 +80,7 @@ function healthcareNewPatient({ navigation }) {
           Birthdate (DD/MM/YYYY):
         </Text>
         <TextInput style={styles.input}
-                   placeholder = '01/21/1972'
+                   placeholder = 'DD/MM/YYYY'
                    autoCapitalize='none'
                    autoCorrect={false}
                    onChangeText = {onChangeBday}
@@ -102,7 +102,7 @@ function healthcareNewPatient({ navigation }) {
           Address:
         </Text>
         <TextInput style={styles.input}
-                   placeholder = '222 Royal Birch View, Vancouver BC Canada V1N 9A2'
+                   placeholder = 'Address'
                    autoCapitalize='none'
                    autoCorrect={false}
                    onChangeText = {onChangeAddress}
@@ -122,7 +122,7 @@ function healthcareNewPatient({ navigation }) {
       <View style={{height: 50}} />
       <TouchableOpacity style={styles.updateBut} onPress={() => setNewPatient()}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
-          UPDATE
+          ENTER
         </Text>
       </TouchableOpacity>
     </View>

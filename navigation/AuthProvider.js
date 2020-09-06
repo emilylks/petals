@@ -91,7 +91,7 @@ export const AuthProvider = ({ children }) => {
               const userRef = db.collection('doctors').doc(doctorID)
                                 .collection('patients').doc(patient_id);
               userRef.set({
-                phone_number,
+                phone_number: phone,
                 address,
                 email,
                 doctorID,
