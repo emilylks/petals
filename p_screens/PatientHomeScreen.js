@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from '../navigation/AuthProvider';
 import Icon from 'react-native-vector-icons/Octicons';
+import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
 
 
 function PatientHomeScreen({ navigation }) {
@@ -32,16 +33,17 @@ function PatientHomeScreen({ navigation }) {
       <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
 
 
-        <TouchableOpacity style={styles.button}>
-              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
-                 O Task Name</Text>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
+              <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/>
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
+                 Task Name</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
-              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, textAlign: 'center'}}>
-              Task Name</Text>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
+              <MaterialCommunityIcons name= "circle-outline" size = {25} color = 'black' style= {{paddingRight: 10, paddingTop: 0}}/>
+              <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 18, paddingLeft: 10}}>
+                 Task Name</Text>
         </TouchableOpacity>
-      
 
     </View>
   );
@@ -54,9 +56,9 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 10,
     paddingRight: 30,
-    paddingLeft: 30,
     borderRadius: 15,
-    height: 40
+    height: 40,
+    flexDirection: 'row'
     }
 });
 
