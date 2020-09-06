@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity, Button, Platform} from 'react-native';
 import RNPickerSelect, {defaultStyles} from 'react-native-picker-select';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
-function newTask() {
+function newTask({ navigation }) {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -38,6 +39,10 @@ function newTask() {
           Tor Aamodt
         </Text>
       </View>
+      <AntDesign name="arrowleft" color={'#fff'} size={28}
+                 style={{marginTop: -65, marginLeft: -330}}
+                 onPress={() => navigation.goBack()}
+      />
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Purpose
@@ -65,7 +70,7 @@ function newTask() {
             onChange={onChange}
           />
         )}
-      </View> 
+      </View>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Duration of Treatment:
@@ -87,7 +92,7 @@ function newTask() {
                 { label: '8', value: 8 },
                 { label: '9', value: 9 },
                 { label: '10', value: 10 },
-              ]}  
+              ]}
           />
           <RNPickerSelect
              style={pickerSelectStyles2}
@@ -100,7 +105,7 @@ function newTask() {
                 { label: 'Days', value: 'Days' },
                 { label: 'Weeks', value: 'Weeks' },
                 { label: 'Months', value: 'Months' },
-              ]}  
+              ]}
           />
         </View>
       </View>
@@ -125,7 +130,7 @@ function newTask() {
                 { label: '8', value: 8 },
                 { label: '9', value: 9 },
                 { label: '10', value: 10 },
-              ]}  
+              ]}
           />
           <RNPickerSelect
              style={pickerSelectStyles2}
@@ -138,7 +143,7 @@ function newTask() {
                 { label: 'Days', value: 'Days' },
                 { label: 'Weeks', value: 'Weeks' },
                 { label: 'Months', value: 'Months' },
-              ]}  
+              ]}
           />
         </View>
       </View>
@@ -163,7 +168,7 @@ function newTask() {
                 { label: '8', value: 8 },
                 { label: '9', value: 9 },
                 { label: '10', value: 10 },
-              ]}  
+              ]}
           />
           <RNPickerSelect
              style={pickerSelectStyles2}
@@ -176,11 +181,12 @@ function newTask() {
                 { label: 'Days', value: 'Days' },
                 { label: 'Weeks', value: 'Weeks' },
                 { label: 'Months', value: 'Months' },
-              ]}  
+              ]}
           />
         </View>
       </View>
-      <TouchableOpacity style={styles.confirmationButton}>
+      <TouchableOpacity style={styles.confirmationButton}
+                        onPress={() => navigation.navigate('New Task pt2')}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
           NEXT
         </Text>
@@ -357,4 +363,3 @@ const pickerSelectStyles2 = StyleSheet.create({
 });
 
 export default newTask;
-
