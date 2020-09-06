@@ -1,12 +1,15 @@
-
-
 import React from 'react';
 import { Button, View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-function taskReport() {
+function taskReport({navigation}) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
+      <AntDesign name="arrowleft" color={'#fff'} size={28}
+                 style={{marginTop: 60, marginLeft: -330}}
+                 onPress={() => navigation.goBack()}
+      />
         <Text style={styles.boldHeaderText}>
           TASK REPORT: 
         </Text>
@@ -21,7 +24,7 @@ function taskReport() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -30,11 +33,12 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     fontSize: 30,
+    fontFamily: 'Inter-SemiBold',
   },
   boldHeaderText: {
     color: 'white',
     fontSize: 30,
-    fontWeight: 'bold'
+    marginTop: -60
   },
   background: {
     flex: 1,

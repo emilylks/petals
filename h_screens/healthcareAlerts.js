@@ -2,6 +2,7 @@ import React, { useContext} from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Octicons';
 
 function healthcareAlerts({navigation}) {
 
@@ -9,14 +10,21 @@ function healthcareAlerts({navigation}) {
 
     <View style={styles.background}>
       <View style={styles.header}>
+        <Icon.Button
+          name="three-bars"
+          color="#fff"
+          backgroundColor = "#4E96AD"
+          size = {30}
+          style={{marginTop: 20, paddingRight:80}} 
+          onPress={() => navigation.openDrawer()}>
+        </Icon.Button>
         <Text style={styles.headerText}>
           ALERTS
         </Text>
         </View>
       <View style={styles.container}> 
-        <Text style={{fontSize: 20, textAlign: 'left', color: 'black', fontWeight: 'bold', alignSelf: 'stretch'}}> 
-          Name
-        </Text>
+        <Text style={{marginTop: -40, fontSize: 25, textAlign: 'left', color: 'black', fontFamily: 'Inter-SemiBold', alignSelf: 'stretch'}}> 
+          Name</Text>
         </View>
 
         <View style={{
@@ -31,9 +39,7 @@ function healthcareAlerts({navigation}) {
 
         <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('TaskReport')}>
         <View style={styles.input}>
-        <Text style={styles.promptText}>
-          Billy Jim
-        </Text>
+        <Text style={styles.promptText}>Billy Jim</Text>
         </View>
       </TouchableOpacity>
 
@@ -76,11 +82,12 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#4E96AD',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 75,
+    flexDirection: 'row'
   },
   container: {
     justifyContent: 'center',
@@ -89,16 +96,19 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'left',
-    fontWeight: 'bold',
+    fontFamily: 'Inter-Bold',
+    paddingTop: 20,
+    marginRight: 90
   },
   promptText: {
     color: 'black',
-    fontWeight: 'bold',
     fontSize: 22,
     textAlign: 'left',
     paddingBottom: 5,
+    fontFamily: 'Inter-Regular',
+    paddingLeft: 20
   },
   img: { 
     width: 100,

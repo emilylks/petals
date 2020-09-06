@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { AuthContext } from '../navigation/AuthProvider';
+import Icon from 'react-native-vector-icons/Octicons';
 
 
 function patientSettings({ navigation }) {
@@ -9,33 +10,41 @@ function patientSettings({ navigation }) {
 
   return (
     <View style={styles.background}>
-      <View style={styles.header}>
+      <Icon.Button
+        name="three-bars"
+        color="#000"
+        backgroundColor = "#fff"
+        size = {30}
+        style={{marginTop: 50, marginRight: 320}}
+        onPress={() => navigation.openDrawer()}>
+      </Icon.Button>
+
         <Text style={styles.headerText}>
           Settings
         </Text>
-      </View>
+   
       <TouchableOpacity style={styles.settingsButtons} onPress={() => navigation.navigate('UpdateProfile')}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
+        <Text style={{fontFamily: 'Inter-Regular', fontSize: 20, textAlign: 'center', color: 'black'}}>
           Update Profile
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.settingsButtons} onPress={() => navigation.navigate('ChangePassword')}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
+        <Text style={{fontFamily: 'Inter-Regular', fontSize: 20, textAlign: 'center', color: 'black'}}>
           Change Password
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.settingsButtons}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
+        <Text style={{fontFamily: 'Inter-Regular', fontSize: 20, textAlign: 'center', color: 'black'}}>
           Dark Mode
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.settingsButtons} onPress={() => logout()}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'black'}}>
+        <Text style={{ fontFamily: 'Inter-Regular', fontSize: 20, textAlign: 'center', color: 'black'}}>
           Sign Out
         </Text>
       </TouchableOpacity>
       <View style={{justifyContent: 'center', alignItems: 'center', width: 350, marginBottom: 20, marginTop: 20}}>
-        <Text style={{fontSize: 12, color: 'black', fontStyle: 'italic', textAlign: 'center'}}>
+        <Text style={{ fontFamily: 'Inter-Regular', fontSize: 14, color: 'black', fontStyle: 'italic', textAlign: 'center'}}>
           Note: if you have changed healthcare providers, please sign out and
           log in with the updated provider ID. This is for enhanced security.
         </Text>
@@ -63,6 +72,7 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'black',
     fontSize: 30,
+    fontFamily: 'Inter-SemiBold'
   },
   background: {
     flex: 1,

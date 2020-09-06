@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 function HealthcareSettingStack() {
   return (
-    <Stack.Navigator initialRouteName="Settings">
+    <Stack.Navigator initialRouteName="Settings" screenOptions={{headerShown: false}}>
       <Stack.Screen name='Settings' component={healthcareSettings} />
       <Stack.Screen name='UpdateProfile' component={healthcareUpdate} />
       <Stack.Screen name='ChangePassword' component={changePassword} />

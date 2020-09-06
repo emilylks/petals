@@ -1,10 +1,15 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-function patientUpdate() {
+function patientUpdate({navigation}) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
+        <AntDesign name="arrowleft" color={'#FFF'} size={28}
+                  style={{paddingRight: 30, paddingTop: 20}}
+                  onPress={() => navigation.goBack()}
+        />
         <Text style={styles.headerText}>
           UPDATE PROFILE
         </Text>
@@ -42,11 +47,12 @@ function patientUpdate() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 120,
+    flexDirection: 'row'
   },
   container: {
     justifyContent: 'center',
@@ -56,11 +62,14 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     fontSize: 30,
+    fontFamily: 'Inter-SemiBold',
+    paddingTop: 20,
+    marginRight: 40
   },
   promptText: {
     color: 'black',
-    fontStyle: 'italic',
-    fontSize: 25,
+    fontFamily: 'Inter-Medium',
+    fontSize: 15,
     paddingBottom: 5,
   },
   img: { 
@@ -74,14 +83,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   input: {
-    backgroundColor: '#A2E1E2',
+    backgroundColor: '#EBF8F9',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 310,
     height: 45,
     textAlign: 'center',
     fontStyle: 'italic',
+    fontFamily: 'Inter-Regular',
     fontSize: 16,
     // letterSpacing: 4,
   },

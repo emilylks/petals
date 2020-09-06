@@ -4,6 +4,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import firebase from '@react-native-firebase/app';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import Icon from 'react-native-vector-icons/Octicons';
 
 const window = Dimensions.get("window");
 const height = window.height;
@@ -43,6 +44,14 @@ function healthcarePatients({ navigation }) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
+      <Icon.Button
+          name="three-bars"
+          color="#fff"
+          backgroundColor = "#4E96AD"
+          size = {30}
+          style={{marginTop: 20, paddingRight:80}} 
+          onPress={() => navigation.openDrawer()}>
+        </Icon.Button>
         <Text style={styles.headerText}>
           PATIENTS
         </Text>
@@ -84,6 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 75,
+    flexDirection: 'row'
   },
   container: {
     justifyContent: 'center',
@@ -94,7 +104,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'Inter-SemiBold',
     fontSize: 30,
-    paddingTop: 20
+    paddingTop: 20,
+    marginRight: 90
   },
   promptText: {
     color: 'black',

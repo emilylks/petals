@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 function AlertStack() {
   return (
-    <Stack.Navigator initialRouteName="Alerts">
+    <Stack.Navigator initialRouteName="Alerts" screenOptions={{headerShown: false}}>
       <Stack.Screen name='Alerts' component={healthcareAlerts} />
       <Stack.Screen name='TaskReport' component={healthcareTaskReport} />
     </Stack.Navigator>

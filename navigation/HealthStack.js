@@ -29,7 +29,7 @@ function HealthStack() {
                    drawerIcon: config => ( <MaterialCommunityIcons name="home" color="black" size={26} /> ),
                   }}/>
       <Drawer.Screen name="Alerts" component={AlertStack} options = {{
-                   drawerIcon: config => ( <MaterialCommunityIcons name="comment-alert" color="black" size={26} /> ),
+                   drawerIcon: config => ( <MaterialCommunityIcons name="comment-alert" color="black" size={26} />),
                   }}/>
       <Drawer.Screen name="Patients" component={healthcarePatientStack} options = {{
                     drawerIcon: config => ( <MaterialCommunityIcons name="contacts" color="black" size={26} /> ),

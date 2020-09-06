@@ -7,10 +7,18 @@ import { AuthContext } from '../navigation/AuthProvider';
 import Icon from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
 
-function patientProgress() {
+function patientProgress({navigation}) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
+        <Icon.Button
+          name="three-bars"
+          color="#fff"
+          backgroundColor = "#4E96AD"
+          size = {30}
+          style={{marginTop: 20, paddingRight:80}} 
+          onPress={() => navigation.openDrawer()}>
+        </Icon.Button>
         <Text style={styles.headerText}>
           CALENDAR
         </Text>
@@ -60,7 +68,7 @@ function patientProgress() {
           >
         </Calendar>
       <View>
-        <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 20, fontSize: 28, color: '#000'}}>
+        <Text style={{fontFamily: 'Inter-Regular', textAlign: 'center', marginTop: 20, fontSize: 28, color: '#000'}}>
           Today's Appointments</Text>
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
 
@@ -83,11 +91,12 @@ function patientProgress() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 30,
+    flexDirection: 'row'
   },
   container: {
     justifyContent: 'center',
@@ -107,6 +116,9 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     fontSize: 30,
+    fontFamily: 'Inter-SemiBold',
+    paddingTop:20,
+    marginRight: 90
   },
   background: {
     flex: 1,

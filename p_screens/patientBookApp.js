@@ -3,8 +3,9 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity, Button, Platform, S
 import RNPickerSelect, {defaultStyles} from 'react-native-picker-select';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import Icon from 'react-native-vector-icons/Octicons';
 
-function bookAppointment() {
+function bookAppointment({navigation}) {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -32,7 +33,16 @@ function bookAppointment() {
   };
 
   return (
-    <ScrollView style={styles.background}>
+    <ScrollView style ={{backgroundColor: '#FFF'}}>
+      <Icon.Button
+        name="three-bars"
+        color="#000"
+        backgroundColor = "#fff"
+        size = {30}
+        style={{marginTop: 50, marginLeft: 20}}
+        onPress={() => navigation.openDrawer()}>
+      </Icon.Button>
+
       <View style={styles.header}>
         <Text style={styles.headerText}>
           Request Appointment
@@ -137,7 +147,7 @@ function bookAppointment() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: 'white',
-    height: 85,
+    height: 20,
     width: 415,
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -147,7 +157,7 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 30,
     fontFamily: 'Inter-SemiBold'
   },
   background: {

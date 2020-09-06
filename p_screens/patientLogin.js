@@ -81,12 +81,6 @@ function patientLogin({navigation}) {
       </View>
       <View style={{marginTop: -15}}>
       <TouchableOpacity style={styles.confirmationButton}
-                        onPress={() => registerPatient(ID, name, bday, email, password)}>
-        <Text style={{fontSize: 13, textAlign: 'center', color: 'white'}}>
-          CREATE ACCOUNT
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.confirmationButton}
                         onPress={() => loginPatient(email, password)}>
         <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
           SIGN IN

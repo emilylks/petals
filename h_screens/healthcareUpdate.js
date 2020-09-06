@@ -49,7 +49,7 @@ function healthcareUpdate() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -63,11 +63,13 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     fontSize: 30,
+    paddingTop: 20,
+    fontFamily: 'Inter-SemiBold'
   },
   promptText: {
     color: 'black',
-    fontStyle: 'italic',
-    fontSize: 25,
+    fontFamily: 'Inter-Medium',
+    fontSize: 15,
     paddingBottom: 5,
   },
   img: { 
@@ -81,15 +83,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   input: {
-    backgroundColor: '#A2E1E2',
+    backgroundColor: '#EBF8F9',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 310,
     height: 45,
     textAlign: 'center',
     fontStyle: 'italic',
     fontSize: 16,
+    fontFamily: 'Inter-Regular'
     // letterSpacing: 4,
   },
   confirmationButton: {
@@ -97,8 +98,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#4C6663',
     borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#CDCDC6',
     width: 160,
     height: 60,
   }

@@ -7,14 +7,22 @@ import { AuthContext } from '../navigation/AuthProvider';
 import Icon from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
 
-function patientProgress() {
+function patientProgress({navigation}) {
   return (
-    <View style={styles.background}>
-      <View style={styles.header}>
+    <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
+        <Icon.Button
+          name="three-bars"
+          color="#000"
+          backgroundColor = "#fff"
+          size = {30}
+          style={{marginTop: 50, marginRight: 320}}
+          onPress={() => navigation.openDrawer()}>
+      </Icon.Button>
+
         <Text style={styles.headerText}>
           Patient's Progress
         </Text>
-      </View>
+  
         <Calendar
           // Initially visible month. Default = Date()
           current={Date()}
@@ -60,8 +68,8 @@ function patientProgress() {
           >
         </Calendar>
       <View>
-        <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 20, fontSize: 28, color: '#000'}}>
-          Today's Task</Text>
+        <Text style={{fontFamily: 'Inter-Medium', textAlign: 'center', marginTop: 20, fontSize: 28, color: '#000'}}>
+          Tommorow's Tasks</Text>
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360 }} />
 
           <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Task')} >
@@ -106,8 +114,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   headerText: {
+    paddingTop: 20,
     color: 'black',
     fontSize: 30,
+    fontFamily: 'Inter-SemiBold'
   },
   background: {
     flex: 1,
