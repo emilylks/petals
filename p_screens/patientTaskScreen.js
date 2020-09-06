@@ -5,18 +5,14 @@ import Icon from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from'react-native-vector-icons/Entypo';
 import FontAwesome from'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign'; 
 
 function patientTask({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
-      <Icon.Button
-        name="three-bars"
-        color="#000"
-        backgroundColor = "#fff"
-        size = {30}
-        style={{marginTop: 50, marginRight: 320}} 
-        onPress={() => navigation.openDrawer()}>
-      </Icon.Button>
+     <AntDesign name="arrowleft" color={'#000'} size={28}
+                 style={{marginTop: 50, marginLeft: -330}}
+                 onPress={() => navigation.goBack()} />
      
       <Text style={{fontFamily: 'Inter-SemiBold', fontSize: 28, color: '#000'}}>
         Task Name</Text>
@@ -34,33 +30,36 @@ function patientTask({navigation}) {
               <MaterialCommunityIcons name= "circle" size = {25} color = '#C4C4C4' style= {{paddingLeft:10}}/>
        </TouchableOpacity>
        
-       <TouchableOpacity style={styles.feedbacks2} onPress={()=> navigation.navigate('Task')} >
+       <TouchableOpacity style={styles.feedbacks2}  >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24, alignSelf: 'center'}}>
                  Enter Numerical Response:</Text>
               <TextInput style={styles.input} placeholder = 'Type number'/>
        </TouchableOpacity>
 
-       <TouchableOpacity style={styles.feedbacks2} onPress={()=> navigation.navigate('Task')} >
+       <TouchableOpacity style={styles.feedbacks2} >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24, alignSelf: 'center'}}>
                  Enter Text Response:</Text>
               <TextInput style={styles.input} placeholder = 'Enter Text'/>
        </TouchableOpacity>
 
-       <TouchableOpacity style={styles.feedbacks} onPress={()=> navigation.navigate('Task')} >
+       <TouchableOpacity style={styles.feedbacks}  >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24}}>
                  Attach Image/Video:</Text>
               <FontAwesome  name= "square" size = {70} color = '#E5E5E5' style= {{paddingLeft: 50}}/>
               <Entypo name= "attachment" size = {40} color = '#000' style= {{marginLeft: -50}}/>
        </TouchableOpacity>
 
-       <TouchableOpacity style={styles.feedbacks} onPress={()=> navigation.navigate('Task')} >
+       <TouchableOpacity style={styles.feedbacks}  >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24}}>
-                Book an Appointmnet</Text>
-              <FontAwesome  name= "square" size = {70} color = '#E5E5E5' style= {{paddingLeft: 50}}/>
-              <Entypo name= "attachment" size = {40} color = '#000' style= {{marginLeft: -50}}/>
+                Book an appointment</Text>
+              <FontAwesome  name= "long-arrow-right" size = {70} color = '#4E96AD' style= {{paddingLeft: 30}}/>
        </TouchableOpacity>
 
-
+       <TouchableOpacity style={styles.confirmationButton} onPress={()=> navigation.navigate('Home')}>
+        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
+          SUBMIT
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -97,14 +96,16 @@ const styles = StyleSheet.create({
       fontSize: 18,
       alignSelf: 'center'
     }, 
-    LinkBut: {
-      marginBottom: 20,
+    confirmationButton: {
+      marginTop:10,
       justifyContent: 'center',
-      backgroundColor: '#4E96AD',
+      backgroundColor: '#4C6663',
       borderRadius: 30,
+      borderWidth: 1,
+      borderColor: '#CDCDC6',
       width: 160,
       height: 60,
-    }
+    },
   
 });
 
