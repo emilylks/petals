@@ -4,7 +4,7 @@ import RNPickerSelect, {defaultStyles} from 'react-native-picker-select';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
-function newTask() {
+function bookAppointment() {
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -245,5 +245,5 @@ const pickerSelectStyles = StyleSheet.create({
   },
 });
 
-export default newTask;
+export default bookAppointment;
 
