@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     width: 350,
     height: 40,
     textAlignVertical: 'top',
-    textAlign: 'left',
+    textAlign: 'center',
     fontSize: 16,
     shadowColor: "#000",
     shadowOffset: {
