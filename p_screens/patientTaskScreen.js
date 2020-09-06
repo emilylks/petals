@@ -1,19 +1,19 @@
-
 import React from 'react';
 import { TouchableOpacity, TextInput, Image, View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Octicons';
-import MaterialCommunityIcons from'react-native-vector-icons/MaterialCommunityIcons';
-import Entypo from'react-native-vector-icons/Entypo';
-import FontAwesome from'react-native-vector-icons/FontAwesome';
-import AntDesign from 'react-native-vector-icons/AntDesign'; 
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 function patientTask({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#FFF'}}>
-     <AntDesign name="arrowleft" color={'#000'} size={28}
-                 style={{marginTop: 50, marginLeft: -330}}
-                 onPress={() => navigation.goBack()} />
-     
+      <AntDesign name="arrowleft" color={'#000'} size={28}
+                 style={{marginTop: 30, marginLeft: -330}}
+                 onPress={() => navigation.goBack()}
+      />
+
       <Text style={{fontFamily: 'Inter-SemiBold', fontSize: 28, color: '#000'}}>
         Task Name</Text>
 
@@ -29,7 +29,7 @@ function patientTask({navigation}) {
               <MaterialCommunityIcons name= "circle" size = {25} color = '#C4C4C4' style= {{paddingLeft:10}}/>
               <MaterialCommunityIcons name= "circle" size = {25} color = '#C4C4C4' style= {{paddingLeft:10}}/>
        </TouchableOpacity>
-       
+
        <TouchableOpacity style={styles.feedbacks2}  >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24, alignSelf: 'center'}}>
                  Enter Numerical Response:</Text>
@@ -67,9 +67,9 @@ function patientTask({navigation}) {
 const styles = StyleSheet.create({
   feedbacks: {
     backgroundColor: '#FFF',
-    borderWidth: 1, 
+    borderWidth: 1,
     borderColor: '#000',
-    width: 420, 
+    width: 420,
     height: 100,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
     },
   feedbacks2: {
       backgroundColor: '#FFF',
-      borderWidth: 1, 
+      borderWidth: 1,
       borderColor: '#000',
-      width: 420, 
+      width: 420,
       height: 100,
       flexDirection: 'column',
       justifyContent: 'center',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 18,
       alignSelf: 'center'
-    }, 
+    },
     confirmationButton: {
       marginTop:10,
       justifyContent: 'center',
@@ -105,11 +105,9 @@ const styles = StyleSheet.create({
       borderColor: '#CDCDC6',
       width: 160,
       height: 60,
-    },
-  
+    }
+
 });
 
 
 export default patientTask;
-
-

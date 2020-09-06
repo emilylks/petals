@@ -3,10 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
 import HealthHomeScreen from '../h_screens/HealthHomeScreen.js';
-import healthcareAlerts from '../h_screens/healthcareAlerts.js';
+import AlertStack from './AlertStack.js';
 import healthcarePatientStack from './healthcarePatientStack.js';
 import healthcareCalendar from '../h_screens/healthcareCalendar.js';
-import healthcareSettings from '../h_screens/healthcareSettings.js';
+import HealthcareSettingStack from './HealthcareSettingStack.js';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -28,16 +28,16 @@ function HealthStack() {
       <Drawer.Screen name="Home" component={HealthHomeScreen} options = {{
                    drawerIcon: config => ( <MaterialCommunityIcons name="home" color="black" size={26} /> ),
                   }}/>
-      <Drawer.Screen name="Alerts" component={healthcareAlerts} options = {{
+      <Drawer.Screen name="Alerts" component={AlertStack} options = {{
                    drawerIcon: config => ( <MaterialCommunityIcons name="comment-alert" color="black" size={26} /> ),
                   }}/>
-                <Drawer.Screen name="Patients" component={healthcarePatientStack} options = {{
+      <Drawer.Screen name="Patients" component={healthcarePatientStack} options = {{
                     drawerIcon: config => ( <MaterialCommunityIcons name="contacts" color="black" size={26} /> ),
                   }}/>
       <Drawer.Screen name="Calendar" component={healthcareCalendar} options = {{
                     drawerIcon: config => ( <MaterialCommunityIcons name="calendar" color="black" size={26} /> ),
                   }}/>
-      <Drawer.Screen name="Settings" component={healthcareSettings} options = {{
+      <Drawer.Screen name="Settings" component={HealthcareSettingStack} options = {{
                    drawerIcon: config => ( <SimpleLineIcons name="settings" color="black" size={26} /> ),
                   }}/>
     </Drawer.Navigator>
