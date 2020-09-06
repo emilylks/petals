@@ -22,7 +22,7 @@ function patientLogin({navigation}) {
           PATIENT LOGIN
         </Text>
       </View>
-      <View style={{height: 40}}/>
+      <View style = {{ marginTop: -20,justifyContent: 'center', alignItems: 'center'}} >
       <View style={styles.container}>
         <Text style={styles.promptText}>
           ID:
@@ -79,7 +79,7 @@ function patientLogin({navigation}) {
                    onChangeText = {onChangePassword}>
         </TextInput>
       </View>
-      <View style={{height: 20}} />
+      <View style={{marginTop: -15}}>
       <TouchableOpacity style={styles.confirmationButton}
                         onPress={() => registerPatient(ID, name, bday, email, password)}>
         <Text style={{fontSize: 13, textAlign: 'center', color: 'white'}}>
@@ -92,6 +92,8 @@ function patientLogin({navigation}) {
           SIGN IN
         </Text>
       </TouchableOpacity>
+      </View>
+    </View>
     </View>
   );
 }
@@ -99,7 +101,7 @@ function patientLogin({navigation}) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 100,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -108,17 +110,19 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 25,
+    marginBottom: 30,
   },
   headerText: {
     color: 'white',
     fontSize: 30,
+    paddingTop: 20,
+    fontFamily: 'Inter-Bold'
   },
   promptText: {
     color: 'black',
-    fontStyle: 'italic',
     fontSize: 15,
     paddingBottom: 5,
+    fontFamily: 'Inter-Medium'
   },
   img: {
     width: 100,
@@ -131,7 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   input: {
-    backgroundColor: '#A2E1E2',
+    backgroundColor: '#EBF8F9',
     opacity: 0.7,
     borderRadius: 30,
     //borderWidth: 1,
@@ -141,10 +145,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontStyle: 'italic',
     fontSize: 16,
+    fontFamily: 'Inter-Regular'
     // letterSpacing: 4,
   },
   confirmationButton: {
-    marginTop: 8,
+    marginTop: 10,
     justifyContent: 'center',
     backgroundColor: '#4C6663',
     borderRadius: 30,

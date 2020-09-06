@@ -39,10 +39,13 @@ function newTask({ navigation }) {
           Tor Aamodt
         </Text>
       </View>
+
       <AntDesign name="arrowleft" color={'#fff'} size={28}
-                 style={{marginTop: -65, marginLeft: -330}}
+                 style={{marginTop: -79, marginLeft: -330}}
                  onPress={() => navigation.goBack()}
       />
+
+      <View style={{marginTop:50, justifyContent: 'center', alignItems: 'center'}}>
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Purpose
@@ -53,12 +56,13 @@ function newTask({ navigation }) {
                    autoCorrect={false}>
         </TextInput>
       </View>
+
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Start Date
         </Text>
         <View style = {{flexDirection: 'row'}}>
-          <Button onPress={showDatepicker} title="Show date picker" />
+          <Button onPress={showDatepicker} title="Show date picker" color= '#4E96AD' />
           <Text style= {{ paddingLeft:20, fontSize: 16}}>{val}</Text>
         </View>
         {show && (
@@ -71,6 +75,7 @@ function newTask({ navigation }) {
           />
         )}
       </View>
+
       <View style={styles.container}>
         <Text style={styles.promptText}>
           Duration of Treatment:
@@ -98,7 +103,7 @@ function newTask({ navigation }) {
              style={pickerSelectStyles2}
               useNativeAndroidPickerStyle={false}
               onValueChange={(value) => setVal(value)}
-              placeholder = {{label: 'Choose Frequency'}}
+              placeholder = {{label: 'Choose Duration'}}
               items={[
                 { label: 'Minutes', value: 'Minutes' },
                 { label: 'Hours', value: 'Hours' },
@@ -138,11 +143,10 @@ function newTask({ navigation }) {
               onValueChange={(value) => setVal(value)}
               placeholder = {{label: 'Choose Frequency'}}
               items={[
-                { label: 'Minutes', value: 'Minutes' },
-                { label: 'Hours', value: 'Hours' },
-                { label: 'Days', value: 'Days' },
-                { label: 'Weeks', value: 'Weeks' },
-                { label: 'Months', value: 'Months' },
+                { label: 'Hour', value: 'Hour' },
+                { label: 'Day', value: 'Day' },
+                { label: 'Week', value: 'Week' },
+                { label: 'Month', value: 'Month' },
               ]}
           />
         </View>
@@ -192,13 +196,14 @@ function newTask({ navigation }) {
         </Text>
       </TouchableOpacity>
     </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -208,6 +213,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 25,
+    justifyContent: 'center',
+    paddingTop: 20
   },
   background: {
     flex: 1,

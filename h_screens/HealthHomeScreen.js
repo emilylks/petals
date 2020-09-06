@@ -24,7 +24,7 @@ function HealthHomeScreen({ navigation }) {
 
     
       <Text style={{fontFamily: 'Inter-SemiBold', marginTop: 50, fontSize: 20, color: '#000', textAlign: 'center'}}>
-      TODAY'S APPOINTMENTS:</Text>
+      Today's Appointments:</Text>
       <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: 360, alignSelf: 'center'}} />
       
       <TouchableOpacity style={styles.button}>

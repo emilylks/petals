@@ -20,6 +20,7 @@ function healthcareLogin({navigation}) {
           PROVIDER LOGIN
         </Text>
       </View>
+      <View style={{ marginTop: -30,justifyContent: 'center', alignItems: 'center'}}> 
       <View style={styles.container}>
         <Text style={styles.promptText}>
           ORGANIZATION:
@@ -65,19 +66,19 @@ function healthcareLogin({navigation}) {
                    onChangeText = {onChangePassword}>
         </TextInput>
       </View>
-      <View style={{height: 20}} />
       <TouchableOpacity style={styles.confirmationButton}
                         onPress={() => registerProvider(org, name, email, password)}>
-        <Text style={{fontSize: 13, textAlign: 'center', color: 'white'}}>
+        <Text style={{fontSize: 13, fontFamily:'Inter-Regular', textAlign: 'center', color: 'white'}}>
           CREATE ACCOUNT
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.confirmationButton}
                         onPress={() => loginProvider(email, password)}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
+        <Text style={{fontSize: 20, fontFamily:'Inter-Regular', textAlign: 'center', color: 'white'}}>
           SIGN IN
         </Text>
       </TouchableOpacity>
+    </View>
     </View>
   );
 }
@@ -85,7 +86,7 @@ function healthcareLogin({navigation}) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 100,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -99,12 +100,14 @@ const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     fontSize: 30,
+    paddingTop: 20,
+    fontFamily: 'Inter-SemiBold'
   },
   promptText: {
     color: 'black',
-    fontStyle: 'italic',
     fontSize: 15,
     paddingBottom: 5,
+    fontFamily: 'Inter-Medium'
   },
   img: {
     width: 100,
@@ -117,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   input: {
-    backgroundColor: '#A2E1E2',
+    backgroundColor: '#EBF8F9',
     opacity: 0.7,
     borderRadius: 30,
     //borderWidth: 1,
@@ -127,10 +130,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontStyle: 'italic',
     fontSize: 16,
+    fontFamily: 'Inter-Regular'
     // letterSpacing: 4,
   },
   confirmationButton: {
-    marginTop: 8,
+    marginTop: 10,
     justifyContent: 'center',
     backgroundColor: '#4C6663',
     borderRadius: 30,

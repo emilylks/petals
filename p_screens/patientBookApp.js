@@ -43,8 +43,8 @@ function bookAppointment() {
           Date
         </Text>
         <View style = {{flexDirection: 'row'}}>
-          <Button onPress={showDatepicker} title="Select date" />
-          <Text style= {{ paddingLeft:20, fontSize: 16}}>{val}</Text>
+          <Button onPress={showDatepicker} title="Select date" color= '#4E96AD' />
+          <Text style= {{ fontFamily:'Inter-Regular', paddingLeft:20,paddingTop:5, fontSize: 16}}>{val}</Text>
         </View>
         {show && (
           <DateTimePicker
@@ -126,7 +126,7 @@ function bookAppointment() {
           />
       </View>
       <TouchableOpacity style={styles.confirmationButton}>
-        <Text style={{fontSize: 20, textAlign: 'center', color: 'white'}}>
+        <Text style={{fontFamily: 'Inter-Regular', fontSize: 20, textAlign: 'center', color: 'white'}}>
           NEXT
         </Text>
       </TouchableOpacity>
@@ -148,20 +148,29 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     fontSize: 25,
+    fontFamily: 'Inter-SemiBold'
   },
   background: {
     flex: 1,
-    // alignItems: 'center',
     backgroundColor: '#FFF',
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    marginTop: 10
   },
   promptText: {
+    fontFamily: 'Inter-SemiBold',
     color: '#4E96AD',
     fontSize: 16,
+    textAlign: 'center'
+  },
+  item: {
+    marginTop: 5,
+    fontFamily: 'Inter-Regular',
+    color: '#000',
+    fontSize: 15,
   },
   input: {
     backgroundColor: 'white',

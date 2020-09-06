@@ -20,7 +20,7 @@ function patientTask({navigation}) {
       <Text style={{fontFamily: 'Inter-Regular', marginTop: -5, marginBottom: 10, fontSize: 20, color: '#000'}}>
         description of the task</Text>
 
-      <TouchableOpacity style={styles.feedbacks} onPress={()=> navigation.navigate('Task')} >
+      <TouchableOpacity style={styles.feedbacks} >
               <Text style={{fontFamily: 'Inter-Regular', color: '#000', fontSize: 24}}>
                  Task Name:</Text>
               <MaterialCommunityIcons name= "circle" size = {25} color = '#4E96AD' style= {{paddingLeft: 50}}/>

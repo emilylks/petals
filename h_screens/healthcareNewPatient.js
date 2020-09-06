@@ -132,7 +132,7 @@ function healthcareNewPatient({ navigation }) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 100,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -140,12 +140,13 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 5,
   },
   headerText: {
     color: 'white',
     fontFamily: 'Inter-SemiBold',
     fontSize: 25,
+    paddingTop: 20
   },
   promptText: {
     color: 'black',
@@ -188,12 +189,12 @@ const styles = StyleSheet.create({
     height: 70,
   },
   updateBut: {
-    marginBottom: 20,
     justifyContent: 'center',
     backgroundColor: '#4E96AD',
     borderRadius: 30,
     width: 160,
     height: 60,
+    marginTop: -20
   }
 });
 

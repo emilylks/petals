@@ -115,7 +115,7 @@ function healthcareViewPatient({ route, navigation }) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 100,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'Inter-SemiBold',
     fontSize: 25,
+    paddingTop: 20
   },
   promptText: {
     color: 'black',

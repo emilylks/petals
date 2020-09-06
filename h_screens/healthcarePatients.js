@@ -79,7 +79,7 @@ function healthcarePatients({ navigation }) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4E96AD',
-    height: 100,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'Inter-SemiBold',
     fontSize: 30,
+    paddingTop: 20
   },
   promptText: {
     color: 'black',

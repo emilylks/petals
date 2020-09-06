@@ -46,16 +46,11 @@ function healthcareNewTaskpt2({ navigation }) {
     setRefresh(!refresh);
     console.log(components);
   }
-  /*const deletePhrase = (name) => {
-    setButtons(prevItems => {
-      return prevItems.filter(item => item.name != name);
-    })
-  }*/
 
   function renderMC() {
     return (
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.multipleChoice}>
           <TextInput
             style={styles.inputDesc}
@@ -78,7 +73,7 @@ function healthcareNewTaskpt2({ navigation }) {
   function renderImg() {
     return(
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.uploadImage}>
           <TextInput
             style={styles.inputDesc}
@@ -88,7 +83,7 @@ function healthcareNewTaskpt2({ navigation }) {
             editable={editImg}
             onChangeText = {onChangeImgTitle}
           />
-        <Entypo name="image" color="black" size={30} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -25}} />
+        <Entypo name="image" color="black" size={40} style={{ paddingRight: 100}} />
         </View>
       </View>
     );
@@ -97,7 +92,7 @@ function healthcareNewTaskpt2({ navigation }) {
   function renderDoc() {
     return (
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.uploadImage}>
           <TextInput
             style={styles.inputDesc}
@@ -107,7 +102,7 @@ function healthcareNewTaskpt2({ navigation }) {
             editable={editDoc}
             onChangeText = {onChangeDocTitle}
           />
-        <Entypo name="text-document" color="black" size={30} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -25}} />
+        <Entypo name="text-document" color="black" size={40} style={{ paddingRight: 100}} />
         </View>
       </View>
     );
@@ -116,7 +111,7 @@ function healthcareNewTaskpt2({ navigation }) {
   function renderVid() {
     return(
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.uploadImage}>
           <TextInput
             style={styles.inputDesc}
@@ -126,7 +121,7 @@ function healthcareNewTaskpt2({ navigation }) {
             editable={editImg}
             onChangeText = {onChangeImgTitle}
           />
-        <Entypo name="folder-video" color="black" size={30} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -25}} />
+        <Entypo name="folder-video" color="black" size={30} style={{ paddingRight: 110}} />
         </View>
       </View>
     );
@@ -135,17 +130,17 @@ function healthcareNewTaskpt2({ navigation }) {
   function renderText() {
     return (
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.uploadImage}>
           <TextInput
-            style={styles.inputTextDesc}
-            placeholder='Input form'
+            style={styles.inputDesc}
+            placeholder='title'
             autoCorrect={false}
             autoCapitalize='none'
             editable={editDoc}
             onChangeText = {onChangeDocTitle}
           />
-          <Text>Patient Response...</Text>
+          <Text style={{paddingRight: 20,fontSize:15}}>Patient Response...</Text>
         </View>
       </View>
     );
@@ -154,17 +149,17 @@ function healthcareNewTaskpt2({ navigation }) {
   function renderNum() {
     return (
       <View style={styles.borderBox}>
-        <Entypo name="dots-three-horizontal" color="black" size={20} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -15}} />
+        <Entypo name="cross" color="black" size={25} style={{alignSelf: 'flex-end', paddingRight: 15, marginTop: -5}} />
         <View style={styles.uploadImage}>
           <TextInput
-            style={styles.inputTextDesc}
-            placeholder='Input form'
+            style={styles.inputDesc}
+            placeholder='title'
             autoCorrect={false}
             autoCapitalize='none'
             editable={editDoc}
             onChangeText = {onChangeDocTitle}
           />
-        <Text>Numeric Response...</Text>
+        <Text style={{paddingRight: 20, fontSize:15}}>Numeric Response...</Text>
         </View>
       </View>
     );
@@ -181,10 +176,11 @@ function healthcareNewTaskpt2({ navigation }) {
         </Text>
       </View>
       <AntDesign name="arrowleft" color={'#fff'} size={28}
-                 style={{marginTop: -65, marginLeft: -330}}
+                 style={{marginTop: -79, marginLeft: -330}}
                  onPress={() => navigation.goBack()}
       />
-      <View style={{marginTop: 30}}>
+
+      <View style={{marginTop: 50}}>
           <Text style={{textAlign: 'center', fontFamily: 'Inter-SemiBold', fontSize: 20, color: '#4E96AD'}}> Set Patient's Daily Tasks</Text>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
@@ -243,7 +239,7 @@ function healthcareNewTaskpt2({ navigation }) {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#4C6663',
-    height: 85,
+    height: 120,
     width: 415,
     justifyContent: 'center',
     alignItems: 'center',
@@ -253,6 +249,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 25,
+    paddingTop: 20
   },
   background: {
     flex: 1,
@@ -309,10 +306,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   inputDesc: {
-    marginRight: 80,
+    marginRight: 50,
     color: '#000',
     fontFamily: 'Inter-Medium',
-    fontSize: 25
+    fontSize: 25,
+    width: 100,
+    marginTop: -10
   },
   inputTextDesc: {
     marginRight: 20,
